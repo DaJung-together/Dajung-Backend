@@ -1,0 +1,10 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /admin
+
+spring:
+  profiles:
+    active: dev
+    include:
+      - data
