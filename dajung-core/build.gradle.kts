@@ -1,17 +1,17 @@
-plugins {
-    id ("org.asciidoctor.jvm.convert") version ("3.3.2")
-}
+apply(plugin = "java-test-fixtures")
 
-tasks.getByName("bootJar") {
-    enabled = true
-}
-
-tasks.getByName("jar") {
-    enabled = false
-}
 
 dependencies {
-//    implementation(project(":data"))
+    api("org.springframework.boot:spring-boot-starter-data-jpa")
 
-    implementation("org.springframework.boot:spring-boot-starter-web")
+    // JWT
+    implementation("io.jsonwebtoken:jjwt-api:0.12.3")
+    runtimeOnly("io.jsonwebtoken:jjwt-impl:0.12.3")
+    runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.12.3")
+
+    // JSON
+    implementation("org.json:json:20230618")
+
+    // Test Fixture
+    api("org.instancio:instancio-junit:4.8.0")
 }

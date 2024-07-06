@@ -1,13 +1,13 @@
-package org.example.app;
+package com.dajung;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AppMain {
+public class DajungApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AppMain.class, args);
+		SpringApplication.run(DajungApplication.class, args);
 	}
 
 }

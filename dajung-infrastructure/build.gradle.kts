@@ -1,6 +1,7 @@
 dependencies {
-    // jpa
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    compileOnly(project(":dajung-core"))
+    testImplementation(testFixtures(project(":dajung-core")))
+
     // mysql
     runtimeOnly("com.mysql:mysql-connector-j")
 
