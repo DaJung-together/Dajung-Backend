@@ -1,5 +1,5 @@
 dependencies {
-    implementation(project(":dajung-core"))
+    compileOnly(project(":dajung-core"))
     testImplementation(testFixtures(project(":dajung-core")))
 
     // mysql
