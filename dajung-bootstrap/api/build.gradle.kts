@@ -13,7 +13,7 @@ tasks.getByName("jar") {
 dependencies {
     // module
     implementation(project(":dajung-core"))
-    runtimeOnly(project(":dajung-infrastructure"))
+    implementation(project(":dajung-infrastructure"))
 
     // Spring
     implementation("org.springframework.boot:spring-boot-starter-web")

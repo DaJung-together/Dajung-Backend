@@ -2,6 +2,7 @@ apply(plugin = "java-test-fixtures")
 
 
 dependencies {
+    // jpa
     api("org.springframework.boot:spring-boot-starter-data-jpa")
 
     // JWT
