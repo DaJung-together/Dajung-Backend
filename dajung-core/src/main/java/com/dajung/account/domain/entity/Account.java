@@ -1,7 +1,11 @@
 package com.dajung.account.domain.entity;
 
+import java.util.List;
+
 import com.dajung.common.entity.BaseEntity;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,10 +29,21 @@ public class Account extends BaseEntity {
 
     private String password;
 
+    private Long userId;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    @Enumerated(EnumType.STRING)
+    private LoginType loginType;
+
     @Builder
-    private Account(String email, String password) {
+    private Account(String email, String password, Long userId, Role role, LoginType loginType) {
         this.email = email;
         this.password = password;
+        this.userId = userId;
+        this.role = role;
+        this.loginType = loginType;
     }
 
 }

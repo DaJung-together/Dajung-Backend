@@ -31,8 +31,8 @@ public class User extends BaseEntity {
     @Column(nullable = false)
     private String nickname;
 
-    @Embedded
-    @Column(nullable = true)
+    // @Embedded
+    @Column(nullable = false)
     private String email;
 
     // TODO: 2024/07/14 연락처 인크립트 & 연락처 or 이메일 인증
@@ -42,7 +42,7 @@ public class User extends BaseEntity {
      * status -> 활성, 휴면, 삭제의 상태
      * 휴면인 경우는 알림이나 상호작용을 받지 않도록
      */
-    @Enumerated(EnumType.STRING)
+    // @Enumerated(EnumType.STRING)
     private String status;
 
     @Builder
