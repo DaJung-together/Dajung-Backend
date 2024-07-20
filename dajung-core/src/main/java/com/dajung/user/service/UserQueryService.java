@@ -12,8 +12,9 @@ public class UserQueryService {
 
     private final LoadUserPort loadUserPort;
 
-    public UserResponse create(Long id) {
+    public UserResponse getById(Long id) {
         User user = loadUserPort.getById(id);
+        return UserResponse.from(user);
     }
 
 }

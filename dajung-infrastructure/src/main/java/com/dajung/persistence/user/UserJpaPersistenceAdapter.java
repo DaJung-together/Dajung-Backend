@@ -3,6 +3,7 @@ package com.dajung.persistence.user;
 import com.dajung.common.exception.GlobalErrorCode;
 import com.dajung.common.exception.NotFoundException;
 import com.dajung.user.domain.entity.User;
+import com.dajung.user.domain.vo.UserStatus;
 import com.dajung.user.port.LoadUserPort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -15,7 +16,7 @@ public class UserJpaPersistenceAdapter implements LoadUserPort{
 
     @Override
     public User getById(Long id) {
-        return repository.findById(id)
+        return repository.findByIdAndStatus(id, UserStatus.ACTIVE)
                 .orElseThrow(() -> new NotFoundException(GlobalErrorCode.NOT_FOUND_ENTITY_EXCEPTION));
     }
 

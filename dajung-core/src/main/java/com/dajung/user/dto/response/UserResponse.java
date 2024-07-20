@@ -1,6 +1,7 @@
 package com.dajung.user.dto.response;
 
 import com.dajung.user.domain.entity.User;
+import com.dajung.user.domain.vo.UserStatus;
 import lombok.Builder;
 
 @Builder
@@ -10,7 +11,7 @@ public record UserResponse(
         String nickname,
         String email,
         String contactNumber,
-        String status
+        UserStatus status
 ) {
 
     public static UserResponse from(User user) {
@@ -20,7 +21,7 @@ public record UserResponse(
                 .nickname(user.getNickname())
                 .email(user.getEmail())
                 .contactNumber(user.getContactNumber())
-                .status(user.getContactNumber())
+                .status(user.getStatus())
                 .build();
     }
 

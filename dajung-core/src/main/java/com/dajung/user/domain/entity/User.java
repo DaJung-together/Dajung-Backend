@@ -1,8 +1,8 @@
 package com.dajung.user.domain.entity;
 
 import com.dajung.common.entity.BaseEntity;
+import com.dajung.user.domain.vo.UserStatus;
 import jakarta.persistence.Column;
-import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -31,7 +31,6 @@ public class User extends BaseEntity {
     @Column(nullable = false)
     private String nickname;
 
-    @Embedded
     @Column(nullable = true)
     private String email;
 
@@ -43,14 +42,14 @@ public class User extends BaseEntity {
      * 휴면인 경우는 알림이나 상호작용을 받지 않도록
      */
     @Enumerated(EnumType.STRING)
-    private String status;
+    private UserStatus status;
 
     @Builder
     private User(String name,
                 String nickname,
                 String email,
                 String contactNumber,
-                String status) {
+                UserStatus status) {
         this.name = name;
         this.nickname = nickname;
         this.email = email;
