@@ -21,6 +21,9 @@ dependencies {
 
     // Test Fixture
     api("org.instancio:instancio-junit:4.8.0")
+
+    // common
+    implementation("commons-codec:commons-codec:1.16.1")
 }
 
 // Querydsl 설정부

@@ -6,3 +6,5 @@ spring:
 
   lifecycle:
     timeout-per-shutdown-phase: 20s
+
+key: 123456789123456789123456789e
