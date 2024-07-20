@@ -4,6 +4,8 @@ public enum GlobalErrorCode implements ErrorCode {
 
     INTERNAL_SERVER_EXCEPTION("G001", "서버에 알 수 없는 문제가 발생했습니다."),
     NOT_FOUND_ENTITY_EXCEPTION("G002", "요청 정보에 해당하는 엔티티를 조회할 수 없습니다."),
+    EXISTS_ENTITY_EXCEPTION("G003", "요청 정보에 해당하는 엔티티가 이미 존재합니다."),
+    CRYPTO_EXCEPTION("G004", "암호화/복호화를 할 수 없습니다.")
     ;
 
     private final String code;
